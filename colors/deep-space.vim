@@ -17,7 +17,7 @@ let g:deepspace_italics = get(g:, 'deepspace_italics', 0)
 let s:gray1     = '#1b202a'
 let s:gray2     = '#232936'
 let s:gray3     = '#323c4d'
-let s:gray4     = '#51617d'
+let s:gray4     = '#41516a'
 let s:gray5     = '#9aa7bd'
 let s:red       = '#b15e7c'
 let s:green     = '#709d6c'
@@ -45,8 +45,10 @@ function! s:HL(group, fg, bg, attr)
     endif
 endfun
 
+hi ExtraWhitespace guifg=#c47ebd guibg=#c47ebd
+
 " Editor Highlights
-call s:HL('ColorColumn',                    '',         s:gray4,    '')
+call s:HL('ColorColumn',                    '',         s:gray2,    '')
 call s:HL('Cursor',                         s:gray2,    s:gray5,    '')
 call s:HL('CursorColumn',                   '',         s:gray2,    '')
 call s:HL('CursorLine',                     '',         s:gray2,    'none')
@@ -56,16 +58,16 @@ call s:HL('DiffChange',                     s:gray3,    s:yellow,   'none')
 call s:HL('DiffDelete',                     s:gray3,    s:red,      'none')
 call s:HL('DiffText',                       s:gray3,    s:blue,     'none')
 call s:HL('ErrorMsg',                       s:red,      s:gray1,    'bold')
-call s:HL('VertSplit',                      s:gray4,    s:gray1,    'none')
-call s:HL('Folded',                         s:gray3,    s:gray1,    '')
-call s:HL('FoldColumn',                     s:cyan,     s:gray1,    '')
+call s:HL('VertSplit',                      s:gray4,    s:gray4,    'none')
+call s:HL('Folded',                         s:gray5,     s:gray4,    '')
+call s:HL('FoldColumn',                     s:pink,     s:gray2,    '')
 call s:HL('SignColumn',                     s:gray2,    s:gray1,    '')
-call s:HL('LineNr',                         s:gray3,    '',         '')
+call s:HL('LineNr',                         s:gray4,    s:gray1,         '')
 call s:HL('CursorLineNr',                   s:gray5,    s:gray2,    'none')
-call s:HL('MatchParen',                     s:gray2,    s:pink,     'bold')
+call s:HL('MatchParen',                     'none',     'none',     'underline')
 call s:HL('ModeMsg',                        s:green,    '',         '')
 call s:HL('MoreMsg',                        s:green,    '',         '')
-call s:HL('NonText',                        s:gray4,    '',         '')
+call s:HL('NonText',                        s:gray4,    s:gray1,         '')
 call s:HL('Normal',                         s:gray5,    s:gray1,    'none')
 call s:HL('Pmenu',                          s:gray5,    s:gray3,    '')
 call s:HL('PmenuSel',                       s:gray2,    s:blue,     '')
@@ -73,32 +75,32 @@ call s:HL('PmenuSbar',                      s:gray3,    s:gray4,    '')
 call s:HL('PmenuThumb',                     s:gray4,    s:gray5,    '')
 call s:HL('Question',                       s:green,    '',         '')
 call s:HL('Search',                         s:gray1,    s:yellow,   '')
-call s:HL('SpecialKey',                     s:gray4,    '',         '')
+call s:HL('SpecialKey',                     s:orange,    '',         '')
 call s:HL('SpellCap',                       s:blue,     '',         'undercurl')
 call s:HL('SpellBad',                       s:red,      '',         'undercurl')
 call s:HL('StatusLine',                     s:gray5,    s:gray3,    'none')
 call s:HL('StatusLineNC',                   s:gray2,    s:gray4,    '')
-call s:HL('TabLine',                        s:gray3,    s:gray1,    'none')
-call s:HL('TabLineFill',                    s:gray4,    s:gray2,    'none')
-call s:HL('TabLineSel',                     s:gray2,    s:gray4,    '')
+call s:HL('TabLine',                        s:gray5,    s:gray3,    'none')
+call s:HL('TabLineFill',                    s:gray4,    s:gray1,    'none')
+call s:HL('TabLineSel',                     s:gray2,    s:blue,    '')
 call s:HL('Title',                          s:yellow,   '',         'none')
-call s:HL('Visual',                         s:gray5,    s:gray3,    '')
+call s:HL('Visual',                         'none',    s:gray3,    '')
 call s:HL('WarningMsg',                     s:red,      '',         '')
 call s:HL('WildMenu',                       s:gray2,    s:blue,     '')
 
 " Standard Syntax
 call s:HL('Comment',                        s:gray4,    '',         'italic')
-call s:HL('Constant',                       s:red,      '',         '')
-call s:HL('String',                         s:green,    '',         '')
-call s:HL('Character',                      s:green,    '',         '')
+call s:HL('Constant',                       s:orange,      '',         '')
+call s:HL('String',                         s:yellow,    '',         '')
+call s:HL('Character',                      s:yellow,    '',         '')
 call s:HL('Identifier',                     s:purple,   '',         'none')
-call s:HL('Function',                       s:yellow,   '',         '')
-call s:HL('Statement',                      s:blue,     '',         'none')
+call s:HL('Function',                       s:green,   '',         '')
+call s:HL('Statement',                      s:red,     '',         'none')
 call s:HL('Operator',                       s:cyan,     '',         'none')
 call s:HL('PreProc',                        s:cyan,     '',         '')
 call s:HL('Define',                         s:blue,     '',         '')
 call s:HL('Macro',                          s:blue,     '',         '')
-call s:HL('Type',                           s:orange,   '',         'none')
+call s:HL('Type',                           s:purple,   '',         'none')
 call s:HL('Structure',                      s:blue,     '',         '')
 call s:HL('Special',                        s:cyan,     '',         '')
 call s:HL('Underlined',                     s:blue,     '',         'none')
@@ -114,7 +116,7 @@ call s:HL('cssClassNameDot',                s:orange,   '',         '')
 call s:HL('cssIdentifier',                  s:yellow,   '',         '')
 call s:HL('cssImportant',                   s:purple,   '',         '')
 call s:HL('cssMediaType',                   s:purple,   '',         '')
-call s:HL('cssProp',                        s:gray5,    '',         '')
+call s:HL('cssProp',                        s:cyan,    '',         '')
 call s:HL('cssSelectorOp',                  s:blue,     '',         '')
 call s:HL('cssSelectorOp2',                 s:blue,     '',         '')
 
@@ -127,6 +129,9 @@ call s:HL('lessClass',                      s:orange,   '',         '')
 call s:HL('lessClassChar',                  s:orange,   '',         '')
 call s:HL('lessFunction',                   s:yellow,   '',         '')
 call s:HL('lessCssAttribute',               s:gray5,    '',         '')
+
+" NERDTree
+hi NERDTreeCWD guifg=#709d6c
 
 " Git
 call s:HL('gitcommitComment',               s:gray4,    '',         'italic')
@@ -150,9 +155,9 @@ hi link gitcommitSelectedArrow  gitcommitSelectedFile
 hi link gitcommitUnmergedArrow  gitcommitUnmergedFile
 
 " HTML
-call s:HL('htmlArg',                        s:yellow,   '',         '')
-call s:HL('htmlEndTag',                     s:purple,   '',         '')
-call s:HL('htmlTag',                        s:purple,   '',         '')
+call s:HL('htmlArg',                        s:orange,   '',         '')
+call s:HL('htmlEndTag',                     s:green,   '',         '')
+call s:HL('htmlTag',                        s:green,   '',         '')
 call s:HL('htmlTagName',                    s:blue,     '',         '')
 call s:HL('htmlTitle',                      s:gray5,    '',         '')
 
@@ -188,7 +193,7 @@ call s:HL('SignifySignDelete',              s:red,      '',         '')
 
 if has("nvim") && exists("&termguicolors") && &termguicolors
     let g:terminal_color_0  = "#1b202a"
-    let g:terminal_color_8  = "#232936"
+    let g:terminal_color_8  = "#51617D"
     let g:terminal_color_1  = "#b15e7c"
     let g:terminal_color_9  = "#b3785d"
     let g:terminal_color_2  = "#709d6c"
@@ -200,7 +205,7 @@ if has("nvim") && exists("&termguicolors") && &termguicolors
     let g:terminal_color_5  = "#8f72bf"
     let g:terminal_color_13 = "#c47ebd"
     let g:terminal_color_6  = "#56adb7"
-    let g:terminal_color_14 = "#51617d"
+    let g:terminal_color_14 = "#8f72bf"
     let g:terminal_color_7  = "#323c4d"
     let g:terminal_color_15 = "#9aa7bd"
 endif
