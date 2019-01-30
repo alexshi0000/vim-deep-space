@@ -191,6 +191,19 @@ call s:HL('SignifySignAdd',                 s:green,    '',         '')
 call s:HL('SignifySignChange',              s:yellow,   '',         '')
 call s:HL('SignifySignDelete',              s:red,      '',         '')
 
+" Ctrlp
+
+hi! link CtrlPMatch TODO
+hi! link CtrlPNoEntries SpellBad
+hi! link CtrlPPrtBase Comment
+hi! link CtrlPPrtCursor TabLineSel
+hi! link CtrlPLinePre JavaScriptReserved
+
+call s:HL('CtrlPMode1', s:blue, s:gray3, '')
+call s:HL('CtrlPMode2', s:gray3, s:blue, '')
+call s:HL('CtrlPStats', s:gray5, s:gray2,'')
+
+
 if has("nvim") && exists("&termguicolors") && &termguicolors
     let g:terminal_color_0  = "#1b202a"
     let g:terminal_color_8  = "#51617D"
