@@ -31,7 +31,7 @@ let s:pink      = '#c47ebd'
 function! s:HL(group, fg, bg, attr)
     let l:attr = a:attr
     if !g:deepspace_italics && l:attr ==# 'italic'
-        let l:attr = 'none'
+        let l:attr = 'italic'
     endif
 
     if !empty(a:fg)
@@ -46,6 +46,8 @@ function! s:HL(group, fg, bg, attr)
 endfun
 
 hi ExtraWhitespace guifg=#c47ebd guibg=#c47ebd
+hi NERDTreeOpenable guifg=#41516a
+hi NERDTreeClosable guifg=#9aa7bd
 
 " Editor Highlights
 call s:HL('ColorColumn',                    '',         s:gray2,    '')
@@ -75,7 +77,7 @@ call s:HL('PmenuSbar',                      s:gray3,    s:gray4,    '')
 call s:HL('PmenuThumb',                     s:gray4,    s:gray5,    '')
 call s:HL('Question',                       s:green,    '',         '')
 call s:HL('Search',                         s:gray1,    s:pink,   '')
-call s:HL('SpecialKey',                     s:blue,    '',         '')
+call s:HL('SpecialKey',                     s:pink,    '',         '')
 call s:HL('SpellCap',                       s:blue,     '',         'undercurl')
 call s:HL('SpellBad',                       s:red,      '',         'undercurl')
 call s:HL('StatusLine',                     s:gray5,    s:gray3,    'none')
@@ -91,21 +93,21 @@ call s:HL('WildMenu',                       s:gray2,    s:blue,     '')
 " Standard Syntax
 call s:HL('Comment',                        s:gray4,    '',         'italic')
 call s:HL('Constant',                       s:green,      '',         '')
-call s:HL('String',                         s:yellow,    '',         '')
+call s:HL('String',                         s:yellow,    '',         'italic')
 call s:HL('Character',                      s:yellow,    '',         '')
 call s:HL('Identifier',                     s:purple,   '',         'none')
-call s:HL('Function',                       s:purple,   '',         '')
+call s:HL('Function',                       s:purple,   '',         'italic')
 call s:HL('Statement',                      s:red,     '',         'none')
 call s:HL('Operator',                       s:cyan,     '',         'none')
 call s:HL('PreProc',                        s:cyan,     '',         '')
 call s:HL('Define',                         s:blue,     '',         '')
-call s:HL('Macro',                          s:cyan,     '',         '')
+call s:HL('Macro',                          s:cyan,     '',         'italic')
 call s:HL('Type',                           s:red,   '',         'none')
 call s:HL('Structure',                      s:blue,     '',         '')
 call s:HL('Special',                        s:cyan,     '',         '')
 call s:HL('Underlined',                     s:blue,     '',         'none')
-call s:HL('Error',                          s:red,      s:gray1,    'bold')
-call s:HL('Todo',                           s:pink,     s:gray1,    'bold')
+call s:HL('Error',                          s:red,      s:gray1,    'underline')
+call s:HL('Todo',                           s:pink,     s:gray1,    'underline')
 
 " CSS/Sass/Less
 call s:HL('cssAttrComma',                   s:green,    '',         '')
@@ -163,12 +165,12 @@ call s:HL('htmlTitle',                      s:gray5,    '',         '')
 
 " Javascript
 call s:HL('javaScriptBraces',               s:gray5,    '',         '')
-call s:HL('javaScriptIdentifier',           s:blue,     '',         '')
-call s:HL('javaScriptFunction',             s:blue,     '',         '')
+call s:HL('javaScriptIdentifier',           s:pink,     '',         '')
+call s:HL('javaScriptFunction',             s:pink,     '',         '')
 call s:HL('javaScriptNumber',               s:red,      '',         '')
 call s:HL('javaScriptReserved',             s:blue,     '',         '')
 call s:HL('javaScriptRequire',              s:cyan,     '',         '')
-call s:HL('javaScriptNull',                 s:red,      '',         '')
+call s:HL('javaScriptNull',                 s:pink,      '',         '')
 
 " Ruby
 call s:HL('rubyBlockParameterList',         s:purple,   '',         '')
